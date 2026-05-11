@@ -1,0 +1,21 @@
+# Context Rotation Skill - 配置文件
+# 多Agent上下文轮值交接阈值配置
+
+# Token 使用率阈值（%）
+token_warn_pct: 65   # 警告阈值：达到此比例时建议监控
+token_force_pct: 80   # 强制交接阈值：达到此比例时必须交接
+
+# 对话轮次阈值
+round_warn: 25       # 警告阈值：达到此轮次时建议监控
+round_force: 35      # 强制交接阈值：达到此轮次时必须交接
+
+# 交接文件存储路径
+handover_dir: "~/WorkBuddy/2026-05-11-task-17/.workbuddy/memory/handover"
+
+# 新Agent冷启动阈值
+# 当交接次数 > 此值时，提示可能存在任务设计问题
+handover_alert_threshold: 5
+
+# 上下文压缩比例
+# 摘要长度上限（字符）
+summary_max_chars: 500

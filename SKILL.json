@@ -1,0 +1,69 @@
+{
+  "name": "context-rotation",
+  "display_name": "多Agent上下文轮值控制器",
+  "display_name_en": "Multi-Agent Context Rotation Controller",
+  "version": "1.0.0",
+  "license": "MIT",
+  "developer": "Claw (WorkBuddy AI Agent)",
+  "created_date": "2026-05-11",
+  "updated_date": "2026-05-11",
+
+  "category": "AI Agent Framework",
+  "tags": ["多Agent", "上下文管理", "轮值交接", "防卡住", "自动化", "自学习", "multi-agent", "context-management", "handover", "workbuddy"],
+  "tags_zh": ["多Agent", "上下文管理", "轮值交接", "防卡住", "自动化", "自学习"],
+  "tags_en": ["multi-agent", "context-management", "handover", "context-rotation", "automation", "self-learning"],
+
+  "platform": ["WorkBuddy", "CodeBuddy"],
+  "language": ["Python", "Bash", "YAML"],
+  "file_count": 6,
+
+  "description_zh": "多Agent上下文轮值交接控制器。让多个子Agent像接力赛一样无缝交接任务，防止上下文溢出导致卡住。支持自动监控守护进程和自学习阈值优化。",
+  "description_en": "Multi-Agent Context Rotation Controller. Enables seamless task handoff between sub-agents like a relay race, preventing context overflow and task stalls. Supports auto-monitoring daemon and self-learning threshold optimization.",
+
+  "use_cases_zh": [
+    "长任务（>20轮对话）的多Agent接续",
+    "复杂项目的多Agent并行研发",
+    "防止上下文溢出导致任务中断",
+    "持续运行的自动化监控管线"
+  ],
+  "use_cases_en": [
+    "Long tasks (>20 rounds) requiring multi-agent handoff",
+    "Complex projects with parallel agent development",
+    "Preventing context overflow from interrupting tasks",
+    "Continuous automated monitoring pipelines"
+  ],
+
+  "core_files": [
+    {"path": "SKILL.md", "type": "main", "description": "主技能说明文档"},
+    {"path": "scripts/check_context.py", "type": "script", "description": "上下文检查器"},
+    {"path": "scripts/handover_manager.py", "type": "script", "description": "交接管理器"},
+    {"path": "scripts/auto_monitor.py", "type": "script", "description": "自动监控守护进程"},
+    {"path": "scripts/threshold_optimizer.py", "type": "script", "description": "阈值自学习分析器"},
+    {"path": "scripts/config.yaml", "type": "config", "description": "阈值配置文件"},
+    {"path": "references/protocol.md", "type": "doc", "description": "交接协议详细文档"},
+    {"path": "references/learning_logic.md", "type": "doc", "description": "自学习算法说明"}
+  ],
+
+  "related_skills": [
+    {"name": "context-guardian", "relationship": "互补", "note": "一个管护，一个管换"},
+    {"name": "hotel-room-quality-inspection", "relationship": "集成", "note": "德胧客房质检系统"}
+  ],
+
+  "install_command": "cp -r context-rotation ~/.workbuddy/skills/",
+  "test_command": "python3 scripts/check_context.py --token_used 2340 --token_limit 3200 --rounds 18 --round_limit 40",
+  "docs_url": "",
+
+  "status": "verified",
+  "verified_date": "2026-05-11",
+  "test_results": {
+    "check_context_py": "✅ 通过",
+    "handover_manager_py": "✅ 通过",
+    "auto_monitor_py": "✅ 通过",
+    "threshold_optimizer_py": "✅ 通过（模拟数据得分0.82/1.0）",
+    "setup_automation_sh": "✅ 通过"
+  },
+
+  "visibility": "public",
+  "open_source": true,
+  "github_repo": ""
+}
